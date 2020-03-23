@@ -113,7 +113,15 @@ function sum(start, end){
 
 // 2.Write a function product that works like sum, except it should compute the product of the numbers from start to end.
 
-
+function product(start, end){
+	if(start === end){
+		return start;
+	} else if (start > end){
+		return start *product(end, start-1);
+	} else {
+		return end*product(start, end-1);
+	}
+}
 
 // Refactor your sum function from earlier to be implemented in terms of product.
 
@@ -129,9 +137,41 @@ function sum(start, end){
 // Your task is to write a function called add that takes two numbers as parameters, x and y, and adds them together.
 //  The catch is that you can only use inc and dec to accomplish this.
 
+function add(x, y){
+	function inc(x) {
+    return x + 1;
+     }
+    function dec(x) {
+    return x - 1;
+    }
+	if(y=== 0){
+		return x;
+	}
+	return add(inc(x), dec(y));
+}
+
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
 
+function isEven(n){
+	if(Number.isInteger(n/2)){
+      return true;
+	}
+	return false;
+}
+
+function isEven(n){
+	if(n=== 0){
+		return true;
+	} else if (n=== 1){
+		return false;
+	} else {
+		return isEven(n-2);
+	}
+}
+
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
+
+
 
 // 6.Write a JavaScript program to get the integers in range (x, y)
 
