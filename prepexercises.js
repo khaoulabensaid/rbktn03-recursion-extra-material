@@ -10,6 +10,14 @@
 //  sum(5); // => 5 + 4 + 3 + 2 + 1 + 0 => 15
 // HINT: We can rephrase 'the sum of n' as 'n plus the sum of n - 1'.
 
+function sum(n){
+	if (n === 0){
+		return 0;
+	} else {
+		return n + sum(n-1);
+	}
+}
+
 // 2.Factorial of n: The factorial of n is the product of all the integers preceding n, starting with 1, e.g.
 
 //  function factorial(n) {
@@ -19,6 +27,14 @@
 //  factorial(4); // => 4 * 3 * 2 * 1 => 24
 //  factorial(5); // => 5 * 4 * 3 * 2 * 1 => 120
 // Implement the factorial function by observing that the 'factorial of n' can be rephrased as 'n times the factorial of n - 1'.
+
+function factorial(n){
+	if (n=== 1){
+		return 1;
+	} else {
+		return n*factorial(n-1);
+	}
+}
 
 // 3.Repeating a String n Times: Let's write a function called repeatString that takes two parameters: a string str, which is the string to be repeated, and count -- a number representing how many times the string str should be repeated, e.g.
 
@@ -34,6 +50,14 @@
 //  HINT: Observe that repeatString('dog', 0) should yield the empty string, ''.
 //  What happens if you evaluate this: ' ' + 'dog'?
 
+function repeatString(str, count){
+	if (count === 0){
+		return "";
+	} else {
+		return str + repeatString(str, count - 1);
+	}
+}
+
 // 4.Compute the nth Fibonacci Number: The fibonacci numbers are represented by the following sequence:
 
 //  // fib(n): 1 1 2 3 5 8 13 21
@@ -47,12 +71,26 @@
 //  fib(n) is fib(n - 1) + fib(n - 2)
 //  Write a function called fib that accepts a number n as a parameter and computes the nth fibonacci number using the above rules.
 
+function fib(n){
+	if (n=== 0 || n=== 1){
+		return 1;
+	} else {
+		return fib(n-1)+ fib(n-2);
+	}
+}
+
 // 5.Write function that multiply the number by 10 n time
 
 //  multiplyBy10(number, n)
 //  multiplyBy10(4,3) => 4000
 //  multiplyBy10(5,2) => 500
 // ------------------------- More Practice -------------------------
+
+function multiplyBy10(number, n){
+	var power= Math.pow(10, n);
+
+	return number*power;
+}
 
 // 1.Modify your sum function from the Basic Requirements section to accept two parameters, start and end: sum should now compute the sum of the numbers from start to end, e.g.
 
@@ -63,7 +101,19 @@
 //  sum(3, 5); // => 3 + 4 + 5 => 12
 // What happens if start is larger than end? Modify sum to check for this case and, when found, swap the start and end arguments.
 
+function sum(start, end){
+	if(start === end){
+		return start;
+	} else if (start > end){
+		return start + sum(end, start-1);
+	} else {
+		return end+ sum(start, end-1);
+	}
+}
+
 // 2.Write a function product that works like sum, except it should compute the product of the numbers from start to end.
+
+
 
 // Refactor your sum function from earlier to be implemented in terms of product.
 
