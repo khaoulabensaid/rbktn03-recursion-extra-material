@@ -186,7 +186,7 @@ function multiply(x, y){
 
 function range(x, y){
 	
-	if(x === y){
+	if(x === y-1){
 		return '';
 	} else {
 		return (x+1) + ',' + range(x+1, y);
@@ -207,6 +207,14 @@ function range(x, y){
 //  //  | | | | |
 //  //  0 1 2 3 4
 //  The 'h' character has index (position) 0 in the string 'hello', 'e' has index 1, 'l' has index 2, etc.
+
+function stringLength(str){
+	var i= 0;
+	var count= 0;
+	if (){
+		return 
+	}
+}
 
 // 2.The 'modulo' operator (%) computes the remainder after dividing its left operand by its right one, e.g.
 
