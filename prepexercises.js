@@ -265,6 +265,16 @@ function countChars(string, character){
 
 // 4. Implement a function called indexOf that accepts two parameters: a string and a character, and returns the first index of character in the string. You'll need to make use of the techniques for accessing the first element of a string and the rest of the string (slice) as before.
 
+function indexOf(string, character){
+	
+	 if( string.length< 0){
+	 	return ;
+	 }
+	 if (string[0] === character){
+	 	return 0;
+	 } 
+	 return 1+ indexOf(string, character);
+}
 
 
 // 5.The power function in the lecture works, but can be made considerably faster through a method known as successive squaring. To get an idea of how this works, observe that:
@@ -277,8 +287,27 @@ function countChars(string, character){
 //  reverse( 'this could be an easy question ' ) =>
 //  'noitseuq ysae na eb dluoc siht'.
 
+function reverse(string){
+ if(string === ""){
+  return string; 
+ }else{
+  return reverse(string.slice(1)) + string[0];
+ }
+}
+
 // 7.Find the greatest common divisor of two numbers.
 
+function gcd(x, y){
+	x= Math.abs(x);
+	y= Math.abs(y);
+var m = x%y ;
+if (y=== 0){
+	return x;
+}	return gcd(y, m);
+}
+
 // 8.Find the lowest common multiple of two numbers. Assume that the two numbers are greater than or equal to 2.
+
+
 
 // 9.There are N number of persons in a party, find the total number of handshake such that a person can handshake only once.
