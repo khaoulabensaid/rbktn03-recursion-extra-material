@@ -209,9 +209,9 @@ function range(x, y){
 //  The 'h' character has index (position) 0 in the string 'hello', 'e' has index 1, 'l' has index 2, etc.
 
 function stringLength(str){
-	var i= 0;
+	
     if (str !== "") {
-        return 1 + stringLength(str.slice(i));
+        return 1 + stringLength(str.slice(1));
     } return 0;
 }
 
@@ -252,7 +252,20 @@ function modulo(x, y){
 //  'dog'[0]; // => 'd'
 // HINT: You'll also need to make use of the slice method as shown above in the exercise on computing the length of a string.
 
+function countChars(string, character){
+	 if( string.length=== 0){
+	 	return 0;
+	 }
+	 if (string[0]=== character){
+	 	return 1 + countChars(string.slice(1), character);
+	 }
+	 return countChars(string.slice(1), character);
+}
+
+
 // 4. Implement a function called indexOf that accepts two parameters: a string and a character, and returns the first index of character in the string. You'll need to make use of the techniques for accessing the first element of a string and the rest of the string (slice) as before.
+
+
 
 // 5.The power function in the lecture works, but can be made considerably faster through a method known as successive squaring. To get an idea of how this works, observe that:
 
