@@ -210,11 +210,11 @@ function range(x, y){
 
 function stringLength(str){
 	var i= 0;
-	var count= 0;
-	if (){
-		return 
-	}
+    if (str !== "") {
+        return 1 + stringLength(str.slice(i));
+    } return 0;
 }
+
 
 // 2.The 'modulo' operator (%) computes the remainder after dividing its left operand by its right one, e.g.
 
@@ -222,6 +222,28 @@ function stringLength(str){
 //  8 % 10; // => 8
 //  7 % 5; // => 2
 // Write a function called modulo that works like the % operator, but without using it.
+
+function modulo(x, y){
+	var m=  Math.floor(x/y) * y;
+	if (x===y){
+		return 0;
+	} else if (x<y){
+		return x;
+	} else {
+		return x - m;
+	}
+}
+
+function modulo(x, y){
+	if (x===y){
+		return 0;
+	} else if (x>y){
+		return modulo(x-y, y);
+	} 
+	else{
+		return x ;
+	}
+}
 
 // 3.Write a function called countChars that accepts two parameters: a string and a character. This function should return a number representing the number of times that the character appears in string. To access the first element of a string, you can use the following syntax:
 
